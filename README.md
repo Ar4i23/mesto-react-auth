@@ -1,4 +1,4 @@
-<h1 align="center">Проект:  <a href="https://ar4i23.github.io/mesto-react/" target="_blank">Место - React</a></h1>
+<h1 align="center">Проект:  <a href="https://ar4i23.github.io/mesto-react-auth/" target="_blank">Место - React</a></h1>
 
 <h2 align="center">Всем привет,меня зовут<a href="https://vk.ru/arturchik_a" target="_blank">Arthur</a>
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h2>
