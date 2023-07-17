@@ -73,7 +73,8 @@ const App = () => {
     return () => {
       document.removeEventListener("keydown", closePopupByEsc);
     };
-  }, []);
+  }, [handleClosePopup]);
+
   // обработчик Регистрации
   const handleRegister = (data, resetInput) => {
     setIsSending(true);
@@ -94,13 +95,14 @@ const App = () => {
         setIsSending(false);
       });
   };
+
   // обработчик Входа
   const handleLogin = (data, resetInput) => {
     setIsSending(true);
     apiAuth
       .signin(data)
-      .then((data) => {
-        localStorage.setItem("token", data.token);
+      .then((res) => {
+        localStorage.setItem("token", res.token);
         resetInput();
         setLoggedIn(true);
         navigate("/");
@@ -143,7 +145,7 @@ const App = () => {
     } else {
       setLoggedIn(false);
     }
-  }, [navigate]);
+  }, []);
 
   // обработчик  удаления карточки на сервере и из UI
   const handleCardDelete = () => {

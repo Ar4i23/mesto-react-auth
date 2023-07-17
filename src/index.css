@@ -16,7 +16,7 @@
 @import url(./blocks/login/__error/login__error.css);
 @import url(./blocks/login/__input/login__input.css);
 @import url(./blocks/login//__form/login__form.css);
-@import url(./blocks/login/__input/__input-error/login__input-error.css);
+@import url(./blocks/login/__input/_error/login__input-error.css);
 @import url(./blocks/login/__buttton/login__button.css);
 @import url(./blocks/login/__buttton/_invalid/login__button_invalid.css);
 @import url(./blocks/login/__subtitle-link/login__subtitle-link.css);
