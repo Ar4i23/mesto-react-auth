@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
+import Input from "./Input";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { useFormValidation } from "../utils/useFormValidation";
 
@@ -64,12 +65,25 @@ const EditProfilePopup = ({ isOpen, isSending, onClose, onUpdateUser }) => {
         <span className="modal__error" id="name-edit-error">
           {error.name}
         </span>
+        {/* <Input
+          id="name-edit"
+          name="name"
+          type="text"
+          isInputValid={isInputValid}
+          placeholder="Имя"
+          minLength={2}
+          maxLength={40}
+          value={value}
+          onChange={hendleChange}
+          disabled={isSending}
+          error={error}
+        /> */}
         <input
           id="about-edit"
           name="about"
           type="text"
           className={`modal__input ${
-            isInputValid.about === undefined || isInputValid.name
+            isInputValid.about === undefined || isInputValid.about
               ? ""
               : "modal__input_error"
           }`}
