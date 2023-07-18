@@ -1,0 +1,9 @@
+.login__subtitle_link {
+  margin-left: 5px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.login__subtitle_link:hover {
+  opacity: 0.8;
+}

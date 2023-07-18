@@ -14,7 +14,6 @@ const Main = ({
   ...rest
 }) => {
   const currentUser = useContext(CurrentUserContext);
-  // console.log(rest.isSending);
   return (
     <>
       {rest.name === "main" ? (

@@ -73,7 +73,14 @@ const App = () => {
     return () => {
       document.removeEventListener("keydown", closePopupByEsc);
     };
-  }, [handleClosePopup]);
+  }, [
+    isAddPlacePopupOpen,
+    isEditProfilePopupOpen,
+    isEditAvatarPopupOpen,
+    isImagePopupOpen,
+    isDeletePopupOpen,
+    isResultPopupOpen,
+  ]);
 
   // обработчик Регистрации
   const handleRegister = (data, resetInput) => {

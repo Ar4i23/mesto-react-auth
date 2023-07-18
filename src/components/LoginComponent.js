@@ -29,7 +29,7 @@ const LoginComponent = ({
         {name === "signup" ? (
           <p className="login__subtitle">
             Уже зарегестрированны?
-            <Link to="/sign-in" className="login__subtitle-link">
+            <Link to="/sign-in" className="login__subtitle_link">
               Войти
             </Link>
           </p>
