@@ -110,6 +110,7 @@ const App = () => {
       .signin(data)
       .then((res) => {
         localStorage.setItem("token", res.token);
+        setUserEmail(data.email);
         resetInput();
         setLoggedIn(true);
         navigate("/");

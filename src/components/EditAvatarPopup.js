@@ -1,16 +1,15 @@
-import React, { useRef } from "react";
+import React from "react";
 import PopupWithForm from "./PopupWithForm";
 import { useFormValidation } from "../utils/useFormValidation";
+import Input from "./Input";
 
 const EditAvatarPopup = ({ isSending, isOpen, onClose, onUpdateAvatar }) => {
-  const inputRef = useRef();
-
   const { value, error, isValid, isInputValid, hendleChange, resetInput } =
     useFormValidation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUpdateAvatar({ avatar: inputRef.current.value }, hendleClose);
+    onUpdateAvatar(value, hendleClose);
   };
 
   const hendleClose = () => {
@@ -32,25 +31,18 @@ const EditAvatarPopup = ({ isSending, isOpen, onClose, onUpdateAvatar }) => {
         onClose={hendleClose}
         onSubmit={handleSubmit}
       >
-        <input
+        <Input
+          required
           id="link-avatar"
           name="avatar"
           type="url"
-          className={`modal__input ${
-            isInputValid.avatar === undefined || isInputValid.avatar
-              ? ""
-              : "modal__input_error"
-          }`}
+          isInputValid={isInputValid.avatar}
           placeholder="Ссылка на картинку"
-          required
+          value={value.avatar}
           onChange={hendleChange}
-          ref={inputRef}
-          value={value.avatar ? value.avatar : ""}
           disabled={isSending}
+          error={error.avatar}
         />
-        <span className="modal__error" id="link-avatar-error">
-          {error.avatar}
-        </span>
       </PopupWithForm>
     </>
   );
