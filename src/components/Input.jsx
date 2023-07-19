@@ -7,7 +7,6 @@ const Input = ({
   isInputValid,
   value,
   error,
-
   minLength,
   maxLength,
   onChange,
@@ -20,7 +19,11 @@ const Input = ({
         id={id}
         name={name}
         type={type}
-        className={`modal__input ${
+        className={`${
+          name === "email" || name === "password"
+            ? "login__input"
+            : "modal__input"
+        }         ${
           isInputValid === undefined || isInputValid ? "" : "modal__input_error"
         }`}
         placeholder={placeholder}

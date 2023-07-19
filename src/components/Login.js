@@ -1,6 +1,7 @@
 import React from "react";
 import LoginComponent from "./LoginComponent";
 import { useFormValidation } from "../utils/useFormValidation";
+import Input from "./Input";
 
 const Login = ({ isSending, onSubmit }) => {
   const { value, error, isValid, isInputValid, hendleChange, resetInput } =
@@ -19,42 +20,30 @@ const Login = ({ isSending, onSubmit }) => {
         onSubmit={handleLogin}
         isSending={isSending}
       >
-        <input
+        <Input
+          required
           id="email-login"
           name="email"
           type="email"
-          className={`login__input ${
-            isInputValid.email === undefined || isInputValid.email
-              ? ""
-              : "login__input_error"
-          }`}
+          isInputValid={isInputValid.email}
           placeholder="Email"
-          required
-          minLength="2"
-          maxLength="40"
-          value={value.email ? value.email : ""}
+          value={value.email}
           onChange={hendleChange}
           disabled={isSending}
+          error={error.email}
         />
-        <span className="login__error">{error.email}</span>
-        <input
+        <Input
+          required
           id="password-login"
           name="password"
           type="password"
-          className={`login__input ${
-            isInputValid.password === undefined || isInputValid.password
-              ? ""
-              : "login__input_error"
-          }`}
+          isInputValid={isInputValid.password}
           placeholder="Пароль"
-          required
-          minLength="2"
-          maxLength="200"
-          value={value.password ? value.password : ""}
+          value={value.password}
           onChange={hendleChange}
           disabled={isSending}
+          error={error.password}
         />
-        <span className="login__error">{error.password}</span>
       </LoginComponent>
     </>
   );
