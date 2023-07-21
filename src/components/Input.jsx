@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/Input.css";
 
 const Input = ({
   id,
@@ -21,10 +22,10 @@ const Input = ({
         type={type}
         className={`${
           name === "email" || name === "password"
-            ? "login__input"
-            : "modal__input"
+            ? "form__input form__input-login"
+            : "form__input"
         }         ${
-          isInputValid === undefined || isInputValid ? "" : "modal__input_error"
+          isInputValid === undefined || isInputValid ? "" : "form__input_error"
         }`}
         placeholder={placeholder}
         minLength={minLength}
@@ -33,7 +34,7 @@ const Input = ({
         onChange={onChange}
         disabled={isSending}
       />
-      <span className="modal__error" id="name-edit-error">
+      <span className="form__input-error" id="name-edit-error">
         {error}
       </span>
     </>
